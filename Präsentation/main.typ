@@ -23,8 +23,6 @@
   event           : [Jugendforum Informatik],
   short-title     : [RISCV],
   short-event     : [Jugendforum Informatik],
-  logo-1          : image("pics/logo_SNS_bianco.svg"),
-  logo-2          : image("pics/logo_SNS_verde.svg"),
   authors         : (
     {
       set text(top-edge: 0pt, bottom-edge: 0pt)
@@ -320,19 +318,6 @@ https://en.wikipedia.org/wiki/Executable_and_Linkable_Format
     $ 00110101 >>> 3 = 00000110 $
   ]
 ]
-// TODO verlinken: https://msyksphinz-self.github.io/riscv-isadoc/html/rvi.html
-#slide(
-  title: [Register]
-)[
-TODO erklären was abi heißt
-  TODO diese slide später
-#table(columns: 3,
-  [*Register*], [*ABI Name*], [*Beschreibung*],
-  [x0], [zero], [Ist immer 0],
-    
-  )
-]
-TODO signed vs unsigned
 
 #slide(
   title: [`a.out`]
@@ -343,13 +328,6 @@ TODO signed vs unsigned
   + `objdump a.out` (TODO welche flags)
 ]
 
-#slide(
-  title: [a.out ausführen]
-)[
-  + einfach ausführen (output anschauen) (qemu)
-  + gdb
-
-]
 
   
 
@@ -361,8 +339,6 @@ Zum Debugging:
 
 - TODO kurzer reminder zu hexadezimalzahlen und binärzahlen
 - TODO erklären wie ecalls funktionieren
-- TODO Tabelle mit register namen
-- TODO bei shift instructions unterschied zwischen 64 und 32 beachten (auch bei encoding zwischen srli und srai)
 - TODO rv64i multilib compilen
 
 - TODO Riscv Musl toolchain erklären (bruacht -a extension für threading sachen)

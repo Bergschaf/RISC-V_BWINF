@@ -40,3 +40,8 @@ ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
 ` scp <source> destination`
 Dateien auf dem Server: `bwinf@bwinf.francloud.org:/home/bwinf/test.txt`
 
+# Beachten
+- Unterschied der Shift instructions zwischen 32 und 64 bit
+- Stack pointer
+
+
