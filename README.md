@@ -42,6 +42,8 @@ Dateien auf dem Server: `bwinf@bwinf.francloud.org:/home/bwinf/test.txt`
 
 # Beachten
 - Unterschied der Shift instructions zwischen 32 und 64 bit
-- Stack pointer
+- Stack pointer!!!
 
+## Doom 
+- Wenn komische writes passieren die nirgendwo im RAM sind, dann ggf UART
 
