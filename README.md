@@ -1,5 +1,23 @@
 # Nützliche Links
 - Arithemtic Right shift in Python [stackoverflow](https://stackoverflow.com/a/65908089)
+
+```py
+# XLEN ist die Anzahl der bytes des registers (64 in unserem fall)
+
+def twos_complement_to_int(a: int, word_size=XLEN):
+    # twos complement
+    if a & (1 << (word_size - 1)):
+        a = a - (1 << word_size)
+    return a
+
+
+def int_to_two_complement(a: int, word_size=XLEN):
+    # twos complement
+    if a < 0:
+        a = (1 << word_size) + a
+    return a
+
+```
   
 - RISCV-Manual: [riscv-unprivileged](https://docs.riscv.org/reference/isa/_attachments/riscv-unprivileged.pdf)
     - 43: 32-Bit Instructions
