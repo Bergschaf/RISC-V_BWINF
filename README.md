@@ -10,7 +10,19 @@
 - Ecall tabelle: 
 
 
-
+# Nächste Schritte
+- Den Programmteil jedes Program-headers (ab p_offset mit der länge p_filesz) an der stelle p_vaddr in den Arbeitsspeicher laden
+- 32 Register implementieren
+- Die Instruction an der Stelle e_entry aus dem Arbeitsspeiher laden (4 Bytes)
+- Die Instruction decodieren
+  - Dafür die Tabellen in der [riscv-unprivileged](https://docs.riscv.org/reference/isa/_attachments/riscv-unprivileged.pdf) specification anschauen (siehe Seitenzahlen oben)
+  - Tipp: Als erstes den Opcode anschauen um Instruction rauszufinden
+      - Zwei Möglichkeiten:
+        + Instruction direkt ausführen
+        + Instruction zuerst Laden (z.B. Instruction Klasse/Struct, ggf. auch verschieden für R-Type, I-Type etc.)
+  - Tipp 2: Debug ausgaben um zu sehen welche Instruction mit welchen Parametern ihr gerade decodiert
+    -> Ihr könnt euren Output `hello_world.dump` datei aus dem Github repo vergleichen (am besten nochmal runterladen/clonen, dann sind auch alle dateien gleich)
+     
 
 
 # VM
