@@ -10,12 +10,14 @@ def twos_complement_to_int(a: int, word_size=XLEN):
         a = a - (1 << word_size)
     return a
 
+public static long signExtend(long value, int bitLength) {
+    if (bitLength <= 0 || bitLength > 64) {
+        throw new IllegalArgumentException("bitLength must be 1..64");
+    }
 
-def int_to_two_complement(a: int, word_size=XLEN):
-    # twos complement
-    if a < 0:
-        a = (1 << word_size) + a
-    return a
+    long shift = 64 - bitLength;
+    return (value << shift) >> shift;
+}
 
 ```
 
