@@ -1,4 +1,6 @@
 # Nützliche Links
+- Arithemtic Right shift in Python [stackoverflow](https://stackoverflow.com/questions/64963170/how-to-do-arithmetic-right-shift-in-python-for-signed-and-unsigned-values)
+  
 - RISCV-Manual: [riscv-unprivileged](https://docs.riscv.org/reference/isa/_attachments/riscv-unprivileged.pdf)
     - 43: 32-Bit Instructions
     - 62: 64-Bit Instructions
