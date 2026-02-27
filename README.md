@@ -18,6 +18,18 @@ def int_to_two_complement(a: int, word_size=XLEN):
     return a
 
 ```
+
+
+```
+# Source - https://stackoverflow.com/a/32031543
+# Posted by Patrick Maupin
+# Retrieved 2026-02-27, License - CC BY-SA 3.0
+
+def sign_extend(value, bits):
+    sign_bit = 1 << (bits - 1)
+    return (value & (sign_bit - 1)) - (value & sign_bit)
+```
+
   
 - RISCV-Manual: [riscv-unprivileged](https://docs.riscv.org/reference/isa/_attachments/riscv-unprivileged.pdf)
     - 43: 32-Bit Instructions
