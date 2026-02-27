@@ -1,0 +1,5997 @@
+warning: failed to auto-clean cache data
+
+failed to clean entries from the global cache
+
+Caused by:
+  IO error for operation on /home/bergschaf/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cc-1.0.73/src/bin: No such file or directory (os error 2)
+
+Caused by:
+  No such file or directory (os error 2)
+warning: unused import: `std::collections::HashMap`
+ --> src/system.rs:4:5
+  |
+4 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `colored::Colorize`
+ --> src/system.rs:8:5
+  |
+8 | use colored::Colorize;
+  |     ^^^^^^^^^^^^^^^^^
+
+warning: unused import: `log::warn`
+ --> src/memory.rs:3:5
+  |
+3 | use log::warn;
+  |     ^^^^^^^^^
+
+warning: unused imports: `max` and `min`
+ --> src/memory.rs:4:16
+  |
+4 | use std::cmp::{max, min};
+  |                ^^^  ^^^
+
+warning: unnecessary parentheses around `if` condition
+  --> src/memory.rs:32:16
+   |
+32 |             if (loc_start <= location.0 && location.1 <= loc_end)
+   |                ^                                                ^
+   |
+   = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+   |
+32 -             if (loc_start <= location.0 && location.1 <= loc_end)
+32 +             if loc_start <= location.0 && location.1 <= loc_end 
+   |
+
+warning: unnecessary parentheses around `if` condition
+  --> src/memory.rs:79:16
+   |
+79 |             if (loc.0 <= location.0 && location.1 <= loc.1)
+   |                ^                                          ^
+   |
+help: remove these parentheses
+   |
+79 -             if (loc.0 <= location.0 && location.1 <= loc.1)
+79 +             if loc.0 <= location.0 && location.1 <= loc.1 
+   |
+
+warning: unnecessary parentheses around `if` condition
+  --> src/memory.rs:92:12
+   |
+92 |         if (address == UART_ADDR) {
+   |            ^                    ^
+   |
+help: remove these parentheses
+   |
+92 -         if (address == UART_ADDR) {
+92 +         if address == UART_ADDR  {
+   |
+
+warning: unnecessary parentheses around `if` condition
+   --> src/memory.rs:123:12
+    |
+123 |         if (address == UART_ADDR) {
+    |            ^                    ^
+    |
+help: remove these parentheses
+    |
+123 -         if (address == UART_ADDR) {
+123 +         if address == UART_ADDR  {
+    |
+
+warning: unused imports: `BType`, `IType`, `JType`, `RType`, `SType`, and `UType`
+   --> src/instruction.rs:402:30
+    |
+402 |     use crate::instruction::{BType, IType, JType, RType, SType, UType};
+    |                              ^^^^^  ^^^^^  ^^^^^  ^^^^^  ^^^^^  ^^^^^
+
+warning: unused import: `std::fs`
+ --> src/main.rs:7:5
+  |
+7 | use std::fs;
+  |     ^^^^^^^
+
+warning: unused import: `log::*`
+ --> src/main.rs:9:5
+  |
+9 | use log::*;
+  |     ^^^^^^
+
+warning: unreachable statement
+  --> src/memory.rs:46:9
+   |
+40 | / ...   panic!(
+41 | | ...       "Tried to read from invalid memory location: {:08x} {:08x}, growi...
+42 | | ...       location.0, location.1
+43 | | ...   );
+   | |_______- any code following this expression is unreachable
+...
+46 |   ...   let mut min_dist = u64::MAX;
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unreachable statement
+   |
+   = note: `#[warn(unreachable_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `ut`
+   --> src/system.rs:333:32
+    |
+333 |             Instruction::FENCE(ut) => {
+    |                                ^^ help: if this is intentional, prefix it with an underscore: `_ut`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `arg4`
+   --> src/system.rs:349:13
+    |
+349 |         let arg4 = reg![system, 13];
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_arg4`
+
+warning: unused variable: `min_dist`
+  --> src/memory.rs:46:13
+   |
+46 |         let mut min_dist = u64::MAX;
+   |             ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_min_dist`
+
+warning: unused variable: `id`
+  --> src/memory.rs:47:13
+   |
+47 |         let mut id = None;
+   |             ^^^^^^ help: if this is intentional, prefix it with an underscore: `_id`
+
+warning: unused variable: `i`
+  --> src/memory.rs:49:13
+   |
+49 |         for i in 0..self.memory.len() {
+   |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+warning: unused variable: `loc_end`
+  --> src/memory.rs:50:21
+   |
+50 |             let (_, loc_end) = self.memory[i].0;
+   |                     ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_loc_end`
+
+warning: unused variable: `dist`
+  --> src/memory.rs:53:21
+   |
+53 |                 let dist = location.0 - loc_end;
+   |                     ^^^^ help: if this is intentional, prefix it with an underscore: `_dist`
+
+warning: unused variable: `id`
+  --> src/memory.rs:61:13
+   |
+61 |         let id = id.expect("No suitable memory segment found");
+   |             ^^ help: if this is intentional, prefix it with an underscore: `_id`
+
+warning: unused variable: `loc_start`
+  --> src/memory.rs:63:14
+   |
+63 |         let (loc_start, loc_end) = self.memory[id].0;
+   |              ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_loc_start`
+
+warning: unused variable: `loc_end`
+  --> src/memory.rs:63:25
+   |
+63 |         let (loc_start, loc_end) = self.memory[id].0;
+   |                         ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_loc_end`
+
+warning: unused variable: `additional`
+  --> src/memory.rs:68:13
+   |
+68 |         let additional = (location.1 - loc_start) as usize;
+   |             ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_additional`
+
+warning: unused variable: `offset_start`
+  --> src/memory.rs:71:13
+   |
+71 |         let offset_start = (location.0 - loc_start) as usize;
+   |             ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_offset_start`
+
+warning: unused variable: `offset_end`
+  --> src/memory.rs:72:13
+   |
+72 |         let offset_end = (location.1 - loc_start) as usize;
+   |             ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_offset_end`
+
+warning: variable does not need to be mutable
+   --> src/memory.rs:117:13
+    |
+117 |         let mut slice = self.get_mut_slice((address, address + 2));
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: variable does not need to be mutable
+   --> src/memory.rs:127:13
+    |
+127 |         let mut slice = self.get_mut_slice((address, address + 4));
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/memory.rs:134:13
+    |
+134 |         let mut slice = self.get_mut_slice((address, address + 8));
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `stack_end`
+   --> src/memory.rs:198:13
+    |
+198 |         let stack_end = stack_start + stack_size as usize;
+    |             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_stack_end`
+
+warning: fields `p_flags` and `p_align` are never read
+  --> src/load_elf.rs:42:5
+   |
+37 | pub struct ProgramHeader {
+   |            ------------- fields in this struct
+...
+42 |     p_flags: u64,
+   |     ^^^^^^^
+...
+58 |     p_align: u64,
+   |     ^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `print` is never used
+  --> src/load_elf.rs:65:12
+   |
+64 | impl ProgramHeader {
+   | ------------------ method in this implementation
+65 |     pub fn print(&self) {
+   |            ^^^^^
+
+warning: multiple fields are never read
+   --> src/load_elf.rs:95:5
+    |
+ 93 | pub struct SectionHeader {
+    |            ------------- fields in this struct
+ 94 |     /// Name of the section (offset to a string in the .shstrtab section)
+ 95 |     sh_name: u64,
+    |     ^^^^^^^
+...
+ 98 |     sh_type: u64,
+    |     ^^^^^^^
+...
+101 |     sh_flags: u64,
+    |     ^^^^^^^^
+...
+104 |     pub(crate) sh_addr: u64,
+    |                ^^^^^^^
+...
+113 |     sh_link: u64,
+    |     ^^^^^^^
+...
+116 |     sh_info: u64,
+    |     ^^^^^^^
+...
+119 |     sh_addralign: u64,
+    |     ^^^^^^^^^^^^
+...
+122 |     sh_entsize: u64,
+    |     ^^^^^^^^^^
+
+warning: method `print` is never used
+   --> src/load_elf.rs:129:12
+    |
+128 | impl SectionHeader {
+    | ------------------ method in this implementation
+129 |     pub fn print(&self) {
+    |            ^^^^^
+
+warning: field `e_shstrndx` is never read
+   --> src/load_elf.rs:178:5
+    |
+155 | pub struct ELF {
+    |            --- field in this struct
+...
+178 |     e_shstrndx: u64,
+    |     ^^^^^^^^^^
+
+warning: method `print` is never used
+   --> src/load_elf.rs:188:12
+    |
+187 | impl ELF {
+    | -------- method in this implementation
+188 |     pub fn print(&self) {
+    |            ^^^^^
+
+warning: associated items `dump`, `create_mapping`, and `load_elf` are never used
+   --> src/memory.rs:12:12
+    |
+ 11 | impl Memory {
+    | ----------- associated items in this implementation
+ 12 |     pub fn dump(&self, start: i64, end: i64) {
+    |            ^^^^
+...
+147 |     pub fn create_mapping(&mut self, location: (u64, u64), data: &Vec<u8>) {
+    |            ^^^^^^^^^^^^^^
+...
+208 |     pub fn load_elf(elf: &ELF, stack_address: u64, stack_size: u64) -> Memory {
+    |            ^^^^^^^^
+
+warning: `Emulator_Rust` (bin "Emulator_Rust") generated 36 warnings (run `cargo fix --bin "Emulator_Rust"` to apply 28 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running `target/debug/Emulator_Rust`
+(00000000, 80011048
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] JAL JType (rd: zero(x0), imm: 80 / 0x50)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000050
+    sp(x2): 0x218f0000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000054
+    sp(x2): 0x218f0000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000058
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000005c
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000060
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000064
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000068
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000006c
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s0(x8), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000070
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s1(x9), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000074
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a0(x10), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000078
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000007c
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000080
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a3(x13), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000084
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a4(x14), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000088
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a5(x15), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000008c
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a6(x16), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000090
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a7(x17), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000094
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s2(x18), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000098
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s3(x19), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000009c
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s4(x20), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000a0
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s5(x21), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000a4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s6(x22), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000a8
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s7(x23), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000ac
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s8(x24), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000b0
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s9(x25), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000b4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s10(x26), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000b8
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: s11(x27), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000bc
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t3(x28), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000c0
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t4(x29), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000c4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t5(x30), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000c8
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t6(x31), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000cc
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000d0
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a0(x10), rs2: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000d4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] AUIPC UType (rd: t0(x5), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000d8
+    t0(x5): 0x800000d4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: 16 / 0x10)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000dc
+    t0(x5): 0x800000e4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000e0
+    t0(x5): 0x800000e4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000e4
+    t0(x5): 0x800000e4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] AUIPC UType (rd: t0(x5), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000e8
+    t0(x5): 0x800000e4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: 16 / 0x10)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000ec
+    t0(x5): 0x800000f4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000f0
+    t0(x5): 0x800000f4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000f4
+    t0(x5): 0x800000f4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] AUIPC UType (rd: t0(x5), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000f8
+    t0(x5): 0x800000f4
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: 36 / 0x24)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800000fc
+    t0(x5): 0x80000118
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000100
+    t0(x5): 0x80000118
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t0(x5), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000104
+    t0(x5): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] SLLI IType (rd: t0(x5), rs1: t0(x5), imm: 53 / 0x35)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000108
+    t0(x5): 0x20000000000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000010c
+    t0(x5): 0x1fffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000110
+    t0(x5): 0x1fffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 31 / 0x1f)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000114
+    t0(x5): 0x1f
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000118
+    t0(x5): 0x1f
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000011c
+    t0(x5): 0x1f
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] AUIPC UType (rd: t0(x5), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000120
+    t0(x5): 0x8000011c
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: 20 / 0x14)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000124
+    t0(x5): 0x80000130
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000128
+    t0(x5): 0x80000130
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000012c
+    t0(x5): 0x80000130
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000130
+    t0(x5): 0x80000130
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000134
+    t0(x5): 0x80000130
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] AUIPC UType (rd: t0(x5), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000138
+    t0(x5): 0x80000134
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: -304 / 0xfffffffffffffed0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000013c
+    t0(x5): 0x80000004
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000140
+    t0(x5): 0x80000004
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a0(x10), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000144
+    t0(x5): 0x80000004
+    a0(x10): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] SLLI IType (rd: a0(x10), rs1: a0(x10), imm: 31 / 0x1f)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000148
+    t0(x5): 0x80000004
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BGE BType (rs1: a0(x10), rs2: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000160
+    t0(x5): 0x80000004
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000164
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BEQ BType (rs1: t0(x5), rs2: zero(x0), imm: 20 / 0x14)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000178
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000017c
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] AUIPC UType (rd: t0(x5), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000180
+    t0(x5): 0x8000017c
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: t0(x5), imm: 20 / 0x14)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000184
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000188
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000018c
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 0 (test passed)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000190
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000194
+    gp(x3): 0x2
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000198
+    gp(x3): 0x2
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000019c
+    gp(x3): 0x2
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001a0
+    gp(x3): 0x2
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001a4
+    gp(x3): 0x2
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1248 / 0x4e0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001a8
+    gp(x3): 0x2
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 3 / 0x3)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001ac
+    gp(x3): 0x3
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001b0
+    gp(x3): 0x3
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001b4
+    gp(x3): 0x3
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001b8
+    gp(x3): 0x3
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x1
+    a4(x14): 0x2
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001bc
+    gp(x3): 0x3
+    t0(x5): 0x80000190
+    t2(x7): 0x2
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x1
+    a4(x14): 0x2
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1224 / 0x4c8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001c0
+    gp(x3): 0x3
+    t0(x5): 0x80000190
+    t2(x7): 0x2
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x1
+    a4(x14): 0x2
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 4 / 0x4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001c4
+    gp(x3): 0x4
+    t0(x5): 0x80000190
+    t2(x7): 0x2
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x1
+    a4(x14): 0x2
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 3 / 0x3)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001c8
+    gp(x3): 0x4
+    t0(x5): 0x80000190
+    t2(x7): 0x2
+    a0(x10): 0x80000000
+    a1(x11): 0x3
+    a2(x12): 0x1
+    a4(x14): 0x2
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 7 / 0x7)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001cc
+    gp(x3): 0x4
+    t0(x5): 0x80000190
+    t2(x7): 0x2
+    a0(x10): 0x80000000
+    a1(x11): 0x3
+    a2(x12): 0x7
+    a4(x14): 0x2
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001d0
+    gp(x3): 0x4
+    t0(x5): 0x80000190
+    t2(x7): 0x2
+    a0(x10): 0x80000000
+    a1(x11): 0x3
+    a2(x12): 0x7
+    a4(x14): 0xa
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 10 / 0xa)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001d4
+    gp(x3): 0x4
+    t0(x5): 0x80000190
+    t2(x7): 0xa
+    a0(x10): 0x80000000
+    a1(x11): 0x3
+    a2(x12): 0x7
+    a4(x14): 0xa
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1200 / 0x4b0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001d8
+    gp(x3): 0x4
+    t0(x5): 0x80000190
+    t2(x7): 0xa
+    a0(x10): 0x80000000
+    a1(x11): 0x3
+    a2(x12): 0x7
+    a4(x14): 0xa
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 5 / 0x5)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001dc
+    gp(x3): 0x5
+    t0(x5): 0x80000190
+    t2(x7): 0xa
+    a0(x10): 0x80000000
+    a1(x11): 0x3
+    a2(x12): 0x7
+    a4(x14): 0xa
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001e0
+    gp(x3): 0x5
+    t0(x5): 0x80000190
+    t2(x7): 0xa
+    a0(x10): 0x80000000
+    a2(x12): 0x7
+    a4(x14): 0xa
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: -32768 / 0xffffffffffff8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001e4
+    gp(x3): 0x5
+    t0(x5): 0x80000190
+    t2(x7): 0xa
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xa
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001e8
+    gp(x3): 0x5
+    t0(x5): 0x80000190
+    t2(x7): 0xa
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffffffff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: -32768 / 0xffffffffffff8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001ec
+    gp(x3): 0x5
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff8000
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffffffff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1176 / 0x498)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001f0
+    gp(x3): 0x5
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff8000
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffffffff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 6 / 0x6)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001f4
+    gp(x3): 0x6
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff8000
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffffffff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a1(x11), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001f8
+    gp(x3): 0x6
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff8000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffffffff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800001fc
+    gp(x3): 0x6
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff8000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0xffffffffffff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000200
+    gp(x3): 0x6
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff8000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0xffffffff80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000204
+    gp(x3): 0x6
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0xffffffff80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1152 / 0x480)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000208
+    gp(x3): 0x6
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0xffffffff80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 7 / 0x7)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000020c
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0xffffffff80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a1(x11), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000210
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0xffffffff80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: -32768 / 0xffffffffffff8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000214
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000218
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: -65536 / 0xffffffffffff0000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000021c
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffff0000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: t2(x7), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000220
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffeffff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] SLLI IType (rd: t2(x7), rs1: t2(x7), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000224
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1120 / 0x460)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000228
+    gp(x3): 0x7
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 8 / 0x8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000022c
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000230
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: 32768 / 0x8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000234
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a2(x12): 0x8000
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a2(x12), rs1: a2(x12), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000238
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff7fff8000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000023c
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff7fff8000
+    a0(x10): 0x80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: 32768 / 0x8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000240
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0x8000
+    a0(x10): 0x80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: t2(x7), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000244
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1088 / 0x440)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000248
+    gp(x3): 0x8
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 9 / 0x9)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000024c
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a1(x11), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000250
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a1(x11), rs1: a1(x11), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000254
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000258
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000025c
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000260
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80000000
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: t2(x7), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000264
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1056 / 0x420)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000268
+    gp(x3): 0x9
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 10 / 0xa)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000026c
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a1(x11), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000270
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a1(x11), rs1: a1(x11), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000274
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: 32768 / 0x8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000278
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x8000
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a2(x12), rs1: a2(x12), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000027c
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x7fffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000280
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x7fffffff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: 65536 / 0x10000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000284
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x10000
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: t2(x7), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000288
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x10001
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] SLLI IType (rd: t2(x7), rs1: t2(x7), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000028c
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x80008000
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: t2(x7), imm: -2 / 0xfffffffffffffffe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000290
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 1012 / 0x3f4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000294
+    gp(x3): 0xa
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000298
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a1(x11), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000029c
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: 32768 / 0x8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002a0
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x8000
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a2(x12), rs1: a2(x12), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002a4
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0x80007ffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002a8
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0x80007ffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: -2147450880 / 0xffffffff80008000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002ac
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80008000
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: t2(x7), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002b0
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 980 / 0x3d4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002b4
+    gp(x3): 0xb
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 12 / 0xc)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002b8
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a1(x11), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002bc
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffff80000000
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a1(x11), rs1: a1(x11), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002c0
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0x7fff
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: -32768 / 0xffffffffffff8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002c4
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0xffffffff80007fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002c8
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffff80007fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: t2(x7), imm: 2147450880 / 0x7fff8000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002cc
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff8000
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: t2(x7), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002d0
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff7fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 948 / 0x3b4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002d4
+    gp(x3): 0xc
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff7fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002d8
+    gp(x3): 0xd
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff7fff
+    a0(x10): 0x80000000
+    a1(x11): 0x7fffffff
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002dc
+    gp(x3): 0xd
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff7fff
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffff8000
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002e0
+    gp(x3): 0xd
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff7fff
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0x7fff7fff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002e4
+    gp(x3): 0xd
+    t0(x5): 0x80000190
+    t2(x7): 0x7fff7fff
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002e8
+    gp(x3): 0xd
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffffffff
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 924 / 0x39c)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002ec
+    gp(x3): 0xd
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffffffff
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002f0
+    gp(x3): 0xe
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffffffff
+    a0(x10): 0x80000000
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002f4
+    gp(x3): 0xe
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffffffff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002f8
+    gp(x3): 0xe
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffffffff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0x1
+    a4(x14): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800002fc
+    gp(x3): 0xe
+    t0(x5): 0x80000190
+    t2(x7): 0xffffffffffffffff
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000300
+    gp(x3): 0xe
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 900 / 0x384)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000304
+    gp(x3): 0xe
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000308
+    gp(x3): 0xf
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000030c
+    gp(x3): 0xf
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0x1
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000310
+    gp(x3): 0xf
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0xffffffffffffffff
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000314
+    gp(x3): 0xf
+    t0(x5): 0x80000190
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: -2 / 0xfffffffffffffffe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000318
+    gp(x3): 0xf
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 876 / 0x36c)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000031c
+    gp(x3): 0xf
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 16 / 0x10)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000320
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0xffffffffffffffff
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000324
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0xffffffffffffffff
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] LUI UType (rd: a2(x12), imm: -2147483648 / 0xffffffff80000000)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000328
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0xffffffff80000000
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: a2(x12), rs1: a2(x12), imm: -1 / 0xffffffffffffffff)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000032c
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x7fffffff
+    a4(x14): 0xfffffffffffffffe
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000330
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0xfffffffffffffffe
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x7fffffff
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDIW IType (rd: t2(x7), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000334
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0x1
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x7fffffff
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] SLLI IType (rd: t2(x7), rs1: t2(x7), imm: 31 / 0x1f)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000338
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0x80000000
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x7fffffff
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 844 / 0x34c)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000033c
+    gp(x3): 0x10
+    t0(x5): 0x80000190
+    t2(x7): 0x80000000
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x7fffffff
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 17 / 0x11)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000340
+    gp(x3): 0x11
+    t0(x5): 0x80000190
+    t2(x7): 0x80000000
+    a0(x10): 0x80000000
+    a1(x11): 0x1
+    a2(x12): 0x7fffffff
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000344
+    gp(x3): 0x11
+    t0(x5): 0x80000190
+    t2(x7): 0x80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xd
+    a2(x12): 0x7fffffff
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000348
+    gp(x3): 0x11
+    t0(x5): 0x80000190
+    t2(x7): 0x80000000
+    a0(x10): 0x80000000
+    a1(x11): 0xd
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a1(x11), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000034c
+    gp(x3): 0x11
+    t0(x5): 0x80000190
+    t2(x7): 0x80000000
+    a0(x10): 0x80000000
+    a1(x11): 0x18
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000350
+    gp(x3): 0x11
+    t0(x5): 0x80000190
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x18
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a1(x11), rs2: t2(x7), imm: 820 / 0x334)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000354
+    gp(x3): 0x11
+    t0(x5): 0x80000190
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x18
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 18 / 0x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000358
+    gp(x3): 0x12
+    t0(x5): 0x80000190
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x18
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000035c
+    gp(x3): 0x12
+    t0(x5): 0x80000190
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0xe
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a2(x12), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000360
+    gp(x3): 0x12
+    t0(x5): 0x80000190
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0xe
+    a2(x12): 0xb
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a2(x12), rs1: a1(x11), rs2: a2(x12)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000364
+    gp(x3): 0x12
+    t0(x5): 0x80000190
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0xe
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000368
+    gp(x3): 0x12
+    t0(x5): 0x80000190
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0xe
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a2(x12), rs2: t2(x7), imm: 796 / 0x31c)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000036c
+    gp(x3): 0x12
+    t0(x5): 0x80000190
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0xe
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 19 / 0x13)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000370
+    gp(x3): 0x13
+    t0(x5): 0x80000190
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0xe
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a1(x11), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000374
+    gp(x3): 0x13
+    t0(x5): 0x80000190
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0xd
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a1(x11), rs1: a1(x11), rs2: a1(x11)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000378
+    gp(x3): 0x13
+    t0(x5): 0x80000190
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000037c
+    gp(x3): 0x13
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a1(x11), rs2: t2(x7), imm: 776 / 0x308)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000380
+    gp(x3): 0x13
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 20 / 0x14)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000384
+    gp(x3): 0x14
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000388
+    gp(x3): 0x14
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000038c
+    ra(x1): 0xd
+    gp(x3): 0x14
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000390
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x80000000
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000394
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    t0(x5): 0x80000190
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: a4(x14), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000398
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    t0(x5): 0x80000190
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000039c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x80000190
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003a0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000388
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000038c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000390
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000394
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: a4(x14), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000398
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000039c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003a0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003a4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003a8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: t1(x6), rs2: t2(x7), imm: 732 / 0x2dc)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003ac
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x14
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 21 / 0x15)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003b0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003b4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x15
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003b8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003bc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003c0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003c4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    t0(x5): 0x2
+    t1(x6): 0x18
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: a4(x14), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003c8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003cc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003d0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003b4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003b8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003bc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003c0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003c4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: a4(x14), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003c8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003cc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003d0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003d4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003d8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: t1(x6), rs2: t2(x7), imm: 684 / 0x2ac)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003dc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x15
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 22 / 0x16)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003e0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003e4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003e8
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003ec
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003f0
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003f4
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003f8
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x19
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: a4(x14), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003fc
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000400
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000404
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -32 / 0xffffffffffffffe0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003e4
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003e8
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003ec
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003f0
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003f4
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003f8
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t1(x6), rs1: a4(x14), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800003fc
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000400
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000404
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -32 / 0xffffffffffffffe0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000408
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000040c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: t1(x6), rs2: t2(x7), imm: 632 / 0x278)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000410
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x16
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 23 / 0x17)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000414
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000418
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x17
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000041c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000420
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000424
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000428
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000042c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -20 / 0xffffffffffffffec)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000418
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000041c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000420
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000424
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000428
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000042c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -20 / 0xffffffffffffffec)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000430
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000434
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 592 / 0x250)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000438
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x17
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000043c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000440
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x18
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000444
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000448
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000044c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000450
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000454
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000458
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000440
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000444
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000448
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000044c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000450
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000454
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000458
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000045c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000460
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 548 / 0x224)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000464
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x18
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000468
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000046c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x19
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000470
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000474
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000478
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000047c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000480
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000484
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000488
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000046c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000470
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000474
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000478
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000047c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000480
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000484
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000488
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000048c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000490
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 500 / 0x1f4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000494
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x19
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000498
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000049c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004a0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004a4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004a8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004ac
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004b0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004b4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000049c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004a0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004a4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004a8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004ac
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004b0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004b4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004b8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004bc
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 456 / 0x1c8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004c0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1a
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 27 / 0x1b)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004c4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004c8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004cc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004d0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004d4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004d8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004dc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004e0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004e4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004c8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004cc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004d0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004d4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004d8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004dc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004e0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004e4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004e8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004ec
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 408 / 0x198)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004f0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1b
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 28 / 0x1c)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004f4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004f8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004fc
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000500
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000504
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000508
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000050c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000510
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000514
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004f8
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800004fc
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000500
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000504
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000508
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000050c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000510
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000514
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000518
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000051c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 360 / 0x168)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000520
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1c
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 29 / 0x1d)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000524
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000528
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000052c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000530
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000534
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000538
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000053c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -20 / 0xffffffffffffffec)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000528
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000052c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000530
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000534
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000538
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000053c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -20 / 0xffffffffffffffec)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000540
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000544
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 320 / 0x140)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000548
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1d
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 30 / 0x1e)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000054c
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000550
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000554
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000558
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000055c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000560
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000564
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000568
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000550
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000554
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000558
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000055c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000560
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000564
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000568
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000056c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000570
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 276 / 0x114)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000574
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1e
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 31 / 0x1f)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000578
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000057c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000580
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000584
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000588
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000058c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000590
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000594
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000598
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000057c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000580
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000584
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000588
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000058c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000590
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000594
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000598
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000059c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005a0
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 228 / 0xe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005a4
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x1f
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 32 / 0x20)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005a8
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005ac
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x20
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005b0
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x20
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005b4
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x20
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005b8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005bc
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005c0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005c4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005ac
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005b0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005b4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 13 / 0xd)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005b8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005bc
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005c0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005c4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -24 / 0xffffffffffffffe8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005c8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 24 / 0x18)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005cc
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 184 / 0xb8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005d0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x20
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 33 / 0x21)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005d4
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005d8
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x21
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005dc
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x21
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005e0
+    ra(x1): 0xd
+    sp(x2): 0xb
+    gp(x3): 0x21
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005e4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005e8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x18
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005ec
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005f0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005f4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005d8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005dc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005e0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 14 / 0xe)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005e4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005e8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005ec
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005f0
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005f4
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005f8
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x18
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 25 / 0x19)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800005fc
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 136 / 0x88)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000600
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x21
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 34 / 0x22)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000604
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000608
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x22
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000060c
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x22
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000610
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x22
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000614
+    ra(x1): 0xe
+    sp(x2): 0xb
+    gp(x3): 0x22
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000618
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x19
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000061c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000620
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000624
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000608
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 11 / 0xb)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000060c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000610
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: zero(x0), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000614
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000618
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: a4(x14), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000061c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x1
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: tp(x4), rs1: tp(x4), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000620
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t0(x5), rs1: zero(x0), imm: 2 / 0x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000624
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: tp(x4), rs2: t0(x5), imm: -28 / 0xffffffffffffffe4)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000628
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x19
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 26 / 0x1a)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000062c
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: a4(x14), rs2: t2(x7), imm: 88 / 0x58)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000630
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x22
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 35 / 0x23)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000634
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x23
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000638
+    ra(x1): 0xf
+    sp(x2): 0xb
+    gp(x3): 0x23
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: sp(x2), rs1: zero(x0), rs2: ra(x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000063c
+    ra(x1): 0xf
+    sp(x2): 0xf
+    gp(x3): 0x23
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 15 / 0xf)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000640
+    ra(x1): 0xf
+    sp(x2): 0xf
+    gp(x3): 0x23
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0xf
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: sp(x2), rs2: t2(x7), imm: 68 / 0x44)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000644
+    ra(x1): 0xf
+    sp(x2): 0xf
+    gp(x3): 0x23
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0xf
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 36 / 0x24)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000648
+    ra(x1): 0xf
+    sp(x2): 0xf
+    gp(x3): 0x24
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0xf
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 32 / 0x20)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000064c
+    ra(x1): 0x20
+    sp(x2): 0xf
+    gp(x3): 0x24
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0xf
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: sp(x2), rs1: ra(x1), rs2: zero(x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000650
+    ra(x1): 0x20
+    sp(x2): 0x20
+    gp(x3): 0x24
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0xf
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 32 / 0x20)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000654
+    ra(x1): 0x20
+    sp(x2): 0x20
+    gp(x3): 0x24
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x20
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: sp(x2), rs2: t2(x7), imm: 48 / 0x30)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000658
+    ra(x1): 0x20
+    sp(x2): 0x20
+    gp(x3): 0x24
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x20
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 37 / 0x25)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000065c
+    ra(x1): 0x20
+    sp(x2): 0x20
+    gp(x3): 0x25
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x20
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: ra(x1), rs1: zero(x0), rs2: zero(x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000660
+    sp(x2): 0x20
+    gp(x3): 0x25
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    t2(x7): 0x20
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000664
+    sp(x2): 0x20
+    gp(x3): 0x25
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: ra(x1), rs2: t2(x7), imm: 32 / 0x20)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000668
+    sp(x2): 0x20
+    gp(x3): 0x25
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 38 / 0x26)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000066c
+    sp(x2): 0x20
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: ra(x1), rs1: zero(x0), imm: 16 / 0x10)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000670
+    ra(x1): 0x10
+    sp(x2): 0x20
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: sp(x2), rs1: zero(x0), imm: 30 / 0x1e)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000674
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADD RType (rd: zero(x0), rs1: ra(x1), rs2: sp(x2)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000678
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: t2(x7), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x8000067c
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: zero(x0), rs2: t2(x7), imm: 8 / 0x8)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x80000680
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] BNE BType (rs1: zero(x0), rs2: gp(x3), imm: 32 / 0x20)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800006a0
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] FENCE UType (rd: zero(x0), imm: 267386880 / 0xff00000)
+[2026-02-27T21:02:59Z WARN  Emulator_Rust::system] FENCE not implemented yet
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800006a4
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x26
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: gp(x3), rs1: zero(x0), imm: 1 / 0x1)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800006a8
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x1
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a7(x17), rs1: zero(x0), imm: 93 / 0x5d)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800006ac
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x1
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a0(x10): 0x80000000
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    a7(x17): 0x5d
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ADDI IType (rd: a0(x10), rs1: zero(x0), imm: 0 / 0x0)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800006b0
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x1
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    a7(x17): 0x5d
+    
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] ECALL
+[2026-02-27T21:02:59Z INFO  Emulator_Rust::system] ECALL: 93 (exit)
+[2026-02-27T21:02:59Z DEBUG Emulator_Rust::system] PC: 0x800006b4
+    ra(x1): 0x10
+    sp(x2): 0x1e
+    gp(x3): 0x1
+    tp(x4): 0x2
+    t0(x5): 0x2
+    t1(x6): 0x1a
+    a1(x11): 0x1a
+    a2(x12): 0x19
+    a4(x14): 0x1a
+    a7(x17): 0x5d
+    
+STOP
