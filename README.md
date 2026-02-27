@@ -46,4 +46,5 @@ Dateien auf dem Server: `bwinf@bwinf.francloud.org:/home/bwinf/test.txt`
 
 ## Doom 
 - Wenn komische writes passieren die nirgendwo im RAM sind, dann ggf UART
+- und irgendwann wird der Heap extended? (wie?)
 
