@@ -26,6 +26,11 @@
 - Program Counter +4
 - Wiederholen 
 
+# Debugging
++ Instructions mit der `hello_world.dump` Datei vergleichen
++ Sobald ihr System Calls implementiert habt:
+     -  Die Tests zu den Instructions im Order `tests` ausführen (wir schauen dann gemeinsam was da für syscalls kommen, um zu sehen ob die tests failen oder passen)
+  
 
 # VM
 
