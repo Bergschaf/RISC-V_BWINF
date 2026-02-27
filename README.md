@@ -26,6 +26,17 @@
 - Program Counter +4
 - Wiederholen 
 
+## Beispiel für das Decodieren einer Instruction
+Link zum Beispiel: `https://luplab.gitlab.io/rvcodecjs/#q=sub+x10,+x23,+x7&abi=false&isa=AUTO`
+- `inst = 0b01000000011110111000010100110011`
+- `opcode = inst & 0b1111111 = 0b0110011` -> ADD/SUB/SLL/... -> man muss func3 anschauen um die genaue instruction rauszufinden
+- `func3 = (inst >> 11) & 0b111 = 0b000` ->  ADD oder Sub -> man muss func7 anschauen
+- `func7 = inst >> 24 = 0b0100000` -> Es ist die ADD instruction
+- `rs1 = (inst >> 14) & 0b11111 = 0b10111 = 23`  
+- `rs2 = (inst >> 19) & 0b11111 = 0b00111 = 7`
+- `rd = (inst >> 7) & 0b11111 = b01010 = 10`
+- Register 10 wird auf Register 23 + register 7 gesetzt
+
 # Debugging
 + Instructions mit der `hello_world.dump` Datei vergleichen
 + Sobald ihr System Calls implementiert habt:
