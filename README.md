@@ -50,7 +50,7 @@
       Also:
         - arg2 gibt den Speicherort (Pointer) eines Arrays an `iovec` Strukturen an
         - Jede der `iovec` Strukturen gibt den Ort und die Länge eines Strings im Speicher an
-       ![]("image.webp") 
+       ![]("image.png") 
 
 # VM
 
