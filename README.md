@@ -30,6 +30,8 @@ def int_to_two_complement(a: int, word_size=XLEN):
 - Ecall tabelle: [https://gpages.juszkiewicz.com.pl/syscalls-table/syscalls.html](https://gpages.juszkiewicz.com.pl/syscalls-table/syscalls.html)
 
 
+## Zu den Tests:
+- Wenn ein ecall kommt seht ihr in x10 ob der test erfolgreich war (x10 == 0 -> erfolgreich, sonst ist x10 die Nummer des fehlgeschlagenen tests)
 # Nächste Schritte
 - Den Programmteil jedes Program-headers (ab p_offset mit der länge p_filesz) an der stelle p_vaddr in den Arbeitsspeicher laden
 - 32 Register implementieren (Das Register x0 ist immer 0)
