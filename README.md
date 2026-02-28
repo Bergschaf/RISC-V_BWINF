@@ -107,7 +107,7 @@ Link zum Beispiel: `https://luplab.gitlab.io/rvcodecjs/#q=sub+x10,+x23,+x7&abi=f
       Also:
         - arg2 gibt den Speicherort (Pointer) eines Arrays an `iovec` Strukturen an
         - Jede der `iovec` Strukturen gibt den Ort und die Länge eines Strings im Speicher an
-
+(Das Program erwartet die Anzahl der Ausgegebenen Bytes in x10 als Rückgabe)
 ![Bild](image.png) 
 
 # VM
